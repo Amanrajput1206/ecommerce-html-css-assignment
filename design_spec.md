@@ -1,10 +1,26 @@
 # E-commerce Lab: Design Spec
 
-The values used in the Figma design. Put them in `:root` as design tokens and use
+The values used in the design. Put them in `:root` as design tokens and use
 `var(--token)` everywhere else. Token names are suggestions; any clear name is fine.
 
 Sizes are listed in px for reference, with the `rem` value to write in brackets (1rem = 16px).
 Where a size should be fluid, the spec says so.
+
+## Final expected look (1440px)
+
+This is how the finished page should look on a 1440px-wide screen.
+
+- **Blue double arrows:** sizes and spacing (heights, widths, gaps, padding) with the token or
+  value to use.
+- **Pink cards:** the colours and font sizes of each part, with the `var(--token)` for each.
+- **Top of the image:** the full list of tokens.
+
+You don't need to match it pixel for pixel. Match the layout, colours, font sizes and spacing,
+and make it work on smaller screens too (see `best_practices.md`).
+
+![Final expected look of the page at 1440px, with sizes, spacing, colours and font sizes marked](final_expected_look.png)
+
+Open [final_expected_look.png](final_expected_look.png) directly to zoom in.
 
 ## How to use these values (design tokens)
 

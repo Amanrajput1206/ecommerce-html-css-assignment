@@ -4,7 +4,8 @@ Build an Amazon-style homepage in `ecommerce_assignment.html` and
 `style_ecommerce_assignment.css`. There are 6 sections worth 10 marks each (60 total).
 
 - **Rules and grading:** [best_practices.md](best_practices.md)
-- **Colours, fonts and sizes:** [design_spec.md](design_spec.md) (plus the Figma file)
+- **Colours, fonts and sizes:** [design_spec.md](design_spec.md), including the
+  [final expected look](final_expected_look.png) of the page
 
 ## Getting started
 

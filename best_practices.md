@@ -5,7 +5,7 @@ You will build an Amazon-style homepage in two files:
 - `ecommerce_assignment.html`
 - `style_ecommerce_assignment.css`
 
-The page has **6 sections worth 10 marks each (60 total)**. You get the Figma design for the
+The page has **6 sections worth 10 marks each (60 total)**. You get the design (`final_expected_look.png`) for the
 visuals and `design_spec.md` for the exact colours and sizes. **Pixel-perfect matching is not the
 goal.** Most of your marks come from following the practices below: clean semantic HTML and CSS
 that adapts to the screen instead of using hard-coded sizes.
