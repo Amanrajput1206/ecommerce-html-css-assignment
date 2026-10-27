@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="E-commerce homepage lab: semantic HTML and responsive CSS.">
+
+    <title>Amazon.com. Spend less. Smile more.</title>
+
+    <link rel="icon" href="./amazon_logo.png" type="image/png">
+
+    <!-- Font Awesome icons (optional). Browse free icons at https://fontawesome.com/search?ic=free -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    >
+
+    <!-- Your stylesheet. Write ALL CSS in this file: no <style> tags and no style="" attributes. -->
+    <link rel="stylesheet" href="./style_ecommerce_assignment.css">
+</head>
+
+<body id="top">
+
+    <!--
+        READ FIRST
+        - Follow best_practices.md (grading is based on it) and design_spec.md (colours, sizes).
+        - Build only inside the 6 marked sections. Each section is worth 10 marks.
+        - Keep every section wrapper's class and data-section attribute. You MAY change the
+          wrapper's tag (e.g. <div> to <nav> or <section>) if a more semantic element fits.
+        - Image files are in this folder: amazon_logo.png, hero_image.jpg, box1_image.jpg ... box8_image.jpg
+    -->
+
+    <!-- Lets keyboard users jump past the header (provided, not graded). Keep it first in <body>. -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- ===================== Header ===================== -->
+    <header class="site-header">
+
+        <!-- SECTION 1 - Top belt: logo, location, search, account, cart (10 marks) -->
+        <div class="nav-belt" data-section="1">
+            <!--
+                TODO Section 1:
+                - Amazon logo that links to the home page
+                - "Deliver to India" location
+                - Search bar: category dropdown, search input, search button
+                - Language picker (EN), "Hello, sign in / Account & Lists",
+                  "Returns & Orders", Cart with item count
+            -->
+        </div>
+
+        <!-- SECTION 2 - Secondary navigation (10 marks) -->
+        <div class="nav-main" data-section="2">
+            <!--
+                TODO Section 2:
+                - "All" menu item with a hamburger icon
+                - Links: Today's Deals, Customer Service, Registry, Gift Cards, Sell
+                - Right-aligned promo link: "Shop deals in Electronics"
+            -->
+        </div>
+
+    </header>
+
+    <!-- ===================== Main ===================== -->
+    <main id="main">
+
+        <!-- SECTION 3 - Hero banner: fades into the page background, cards overlap it (10 marks) -->
+        <div class="hero" data-section="3">
+            <!--
+                TODO Section 3:
+                - Full-width hero image (hero_image.jpg) that fades into the page background
+                - The cards in Section 4 overlap the bottom of the hero
+            -->
+        </div>
+
+        <!-- SECTION 4 - Page content: notice, category cards, best-seller shelf (10 marks) -->
+        <div class="page-content" data-section="4">
+            <!--
+                TODO Section 4:
+                - Notice bar: "You are on amazon.com ... Click here to go to amazon.in"
+                - 8 category cards (title, image, "See more" link) using box1_image.jpg ... box8_image.jpg:
+                  Clothes, Health & Personal Care, Furniture, Electronics,
+                  Beauty Picks, Pet Care, New Arrivals in Toys, Discover Fashion Trends
+                - "Best Sellers in Home & Lifestyle" row of 8 images that scrolls sideways
+            -->
+        </div>
+
+    </main>
+
+    <!-- ===================== Footer ===================== -->
+    <footer class="site-footer">
+
+        <!-- SECTION 5 - Footer 1 - footer nav (10 marks) -->
+        <div class="footer-nav" data-section="5">
+            <!--
+                TODO Section 5:
+                - "Back to top" bar that links to the top of the page
+                - 4 link columns: Get to Know Us, Make Money with Us,
+                  Amazon Payment Products, Let Us Help You
+                - Divider, then the logo and 3 selectors: English, USD - U.S. Dollar, United States
+            -->
+        </div>
+
+        <!-- SECTION 6 - Footer 2 - services and legal (10 marks) -->
+        <div class="footer-services" data-section="6">
+            <!--
+                TODO Section 6:
+                - Grid of 21 Amazon services, each with a name and a short description
+                  (Amazon Music / Stream millions of songs, Amazon Ads, 6pm, AbeBooks, ...)
+                - Legal links: Conditions of Use, Privacy Notice, Your Ads Privacy Choices
+                - Copyright line: © 1996-2026, Amazon.com, Inc. or its affiliates
+            -->
+        </div>
+
+    </footer>
+
+    <!-- End of page -->
+</body>
+</html>
