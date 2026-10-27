@@ -1,47 +1,12 @@
-/* ==========================================================================
-   E-commerce lab: style_ecommerce_assignment.css
-   --------------------------------------------------------------------------
-   Read best_practices.md and design_spec.md before you start.
-
-   Rules for this file:
-   - Put shared values (colours, font sizes, spacing, widths) in :root tokens.
-   - Write each section's CSS under its SECTION banner below.
-   - Keep the banner comments: the grader uses them.
-
-   1. Design tokens
-   2. Reset & base
-   3. Utilities (provided)
-   4. Sections 1-6
-   5. Responsive overrides
-   ========================================================================== */
-
-
-/* ==========================================================================
-   1. Design tokens
-   Copy the colours, type sizes and spacing values from design_spec.md.
-   ========================================================================== */
-
+/* Design tokens */
 :root {
-    /* TODO: colour tokens */
-
-    /* TODO: typography tokens */
-
-    /* TODO: spacing and layout tokens */
 }
 
 
-/* ==========================================================================
-   2. Reset & base
-   ========================================================================== */
-
-/* TODO: box-sizing, margins, body font and background, images, links, form controls, focus styles */
+/* Reset & base */
 
 
-/* ==========================================================================
-   3. Utilities (provided, not graded)
-   ========================================================================== */
-
-/* Hides content visually but keeps it readable by screen readers */
+/* Utilities */
 .visually-hidden {
     position: absolute !important;
     width: 1px;
@@ -52,7 +17,6 @@
     white-space: nowrap;
 }
 
-/* Hidden until a keyboard user tabs to it */
 .skip-link {
     position: absolute;
     top: 0.5rem;
@@ -70,64 +34,34 @@
 }
 
 
-/* ==========================================================================
-   SECTION 1 - Header: top belt (.nav-belt)
-   ========================================================================== */
-
+/* SECTION 1 - Top belt */
 .nav-belt {
-    /* TODO */
 }
 
 
-/* ==========================================================================
-   SECTION 2 - Header: secondary navigation (.nav-main)
-   ========================================================================== */
-
+/* SECTION 2 - Secondary navigation */
 .nav-main {
-    /* TODO */
 }
 
 
-/* ==========================================================================
-   SECTION 3 - Main: hero banner (.hero)
-   ========================================================================== */
-
+/* SECTION 3 - Hero banner */
 .hero {
-    /* TODO */
 }
 
 
-/* ==========================================================================
-   SECTION 4 - Main: page content (.page-content)
-   ========================================================================== */
-
+/* SECTION 4 - Page content */
 .page-content {
-    /* TODO */
 }
 
 
-/* ==========================================================================
-   SECTION 5 - Footer 1: footer nav (.footer-nav)
-   ========================================================================== */
-
+/* SECTION 5 - Footer 1: footer nav */
 .footer-nav {
-    /* TODO */
 }
 
 
-/* ==========================================================================
-   SECTION 6 - Footer 2: services and legal (.footer-services)
-   ========================================================================== */
-
+/* SECTION 6 - Footer 2: services and legal */
 .footer-services {
-    /* TODO */
 }
 
 
-/* ==========================================================================
-   5. Responsive overrides
-   Add media queries only to reflow or hide things that don't fit.
-   ========================================================================== */
-
-/* TODO */
-/* End of file */
+/* Responsive overrides */

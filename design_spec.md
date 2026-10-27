@@ -6,6 +6,66 @@ The values used in the Figma design. Put them in `:root` as design tokens and us
 Sizes are listed in px for reference, with the `rem` value to write in brackets (1rem = 16px).
 Where a size should be fluid, the spec says so.
 
+## How to use these values (design tokens)
+
+A **token** is a CSS variable: a name for one design value. You write each value **once**, then
+use its name everywhere. Changing the value in one place then updates the whole page, and every
+section stays consistent.
+
+**Step 1: define every token once,** inside `:root` at the top of
+`style_ecommerce_assignment.css` (under `/* Design tokens */`). Copy the names and values from
+the tables below:
+
+```css
+:root {
+    /* colours */
+    --color-belt: #131921;
+    --color-accent: #febd69;
+    --color-link: #007185;
+
+    /* font sizes */
+    --fs-md: 0.875rem;
+    --fs-xl: 1.3125rem;
+
+    /* spacing and layout */
+    --space-4: 1rem;
+    --gutter: clamp(0.625rem, 1.4vw, 1.25rem);
+    --content-max: 93.75rem;
+}
+```
+
+**Step 2: use them in your rules with `var(--name)`,** never the raw value:
+
+```css
+.nav-belt {
+    background-color: var(--color-belt);   /* not #131921 */
+    gap: var(--gutter);
+}
+
+.search-submit {
+    background-color: var(--color-accent); /* not #febd69 */
+}
+
+.card-title {
+    font-size: var(--fs-xl);               /* not 21px */
+}
+
+.page-content {
+    width: min(100%, var(--content-max));  /* not 1500px */
+    padding-inline: var(--gutter);
+}
+```
+
+Rules of thumb:
+
+- **Raw values (`#131921`, `0.875rem`) appear only inside `:root`.** Everywhere else, use `var(...)`.
+- **Colours:** every `color`, `background-color` and `border-color` uses a `--color-*` token.
+- **Font sizes:** use the `--fs-*` tokens.
+- **Spacing:** use the spacing tokens (`--space-1` to `--space-6`) or `--gutter` for `padding`, `margin` and `gap`.
+- **Names are up to you,** but keep them clear (`--color-link`, not `--c3`). The names below are suggestions.
+- **Colours count for marks.** Colours written as raw hex values outside `:root` lose marks
+  (see `best_practices.md`).
+
 ## Colours
 
 | Token | Hex | Used for |
@@ -50,7 +110,7 @@ Where a size should be fluid, the spec says so.
 
 | Token | Value |
 |---|---|
-| Spacing scale | 4 / 8 / 12 / 16 / 20 / 40 px (`0.25` / `0.5` / `0.75` / `1` / `1.25` / `2.5rem`) |
+| `--space-1` ... `--space-6` | 4 / 8 / 12 / 16 / 20 / 40 px (`0.25` / `0.5` / `0.75` / `1` / `1.25` / `2.5rem`) |
 | `--content-max` | 1500px (`93.75rem`): maximum width of the card area |
 | `--gutter` | fluid, 10-20px: `clamp(0.625rem, 1.4vw, 1.25rem)`, used for page edges and card gaps |
 | Radius | 2px (nav hover), 4px (search bar), 3px (locale selectors) |
@@ -61,6 +121,9 @@ Breakpoints (use `em`): **64em** (1024px, hide language picker and Returns & Ord
 ## Section by section
 
 ### Section 1: Top belt
+- Content: Amazon logo (links home), "Deliver to / India", search bar (category dropdown, search
+  input, search button), language picker "EN", "Hello, sign in / Account & Lists",
+  "Returns / & Orders", Cart with item count.
 - Background `--color-belt`. Minimum height 60px (`3.75rem`). Items in a row with a small gap.
 - Logo: about 97px wide. The PNG has a lot of transparent padding; crop it with
   `object-fit` / `overflow: hidden`, or accept the extra space.
@@ -72,6 +135,8 @@ Breakpoints (use `em`): **64em** (1024px, hide language picker and Returns & Ord
 - Cart: cart icon with the count in `--color-cart-count` above it, and "Cart" in bold.
 
 ### Section 2: Secondary navigation
+- Content: "All" with a hamburger icon; links Today's Deals, Customer Service, Registry,
+  Gift Cards, Sell; promo link "Shop deals in Electronics".
 - Background `--color-nav`, about 39px tall, 14px white text.
 - "All" in bold with a hamburger icon; menu links; "Shop deals in Electronics" in bold pushed to
   the right edge.
@@ -87,16 +152,30 @@ Breakpoints (use `em`): **64em** (1024px, hide language picker and Returns & Ord
 ### Section 4: Page content
 - Limited to `--content-max`, centred, with `--gutter` side padding. It **overlaps the hero**:
   a negative top margin of about 55% of the hero height (about 30% on phones).
-- Notice bar: white, 13px, centred, link in `--color-link`.
+- Notice bar: white, 13px, centred, link in `--color-link`. Text: "You are on amazon.com. You can
+  also shop on Amazon India for millions of products with fast local delivery. Click here to go
+  to amazon.in" (the last sentence links to https://www.amazon.in/).
+- 8 category cards using `box1_image.jpg` ... `box8_image.jpg`: Clothes, Health & Personal Care,
+  Furniture, Electronics, Beauty Picks, Pet Care, New Arrivals in Toys, Discover Fashion Trends.
+  Each has a title, an image and a "See more" link.
 - Category cards: white, padding 20px 20px 15px, title 21px bold, square image (`aspect-ratio: 1`,
   `object-fit: cover`), "See more" 13px in `--color-link`. **4 columns on desktop** with a gap
   of `--gutter`, dropping to 2 and then 1 column on smaller screens.
-- Best-seller shelf: white panel, title 21px bold, a row of square images (about 200px)
+- Best-seller shelf "Best Sellers in Home & Lifestyle": white panel, 8 images, title 21px bold, a row of square images (about 200px)
   that scrolls sideways with scroll snapping.
 
 ### Section 5: Footer nav
 - "Back to top": full width, `--color-footer-top`, 13px, centred, 15px vertical padding.
-- 4 link columns on `--color-nav`, centred in a 1000px (`62.5rem`) wide area. Headings 16px bold
+- 4 link columns:
+  - **Get to Know Us:** Careers, Blog, About Amazon, Investor Relations, Amazon Devices, Amazon Science
+  - **Make Money with Us:** Sell products on Amazon, Sell on Amazon Business, Sell apps on Amazon,
+    Become an Affiliate, Advertise Your Products, Self-Publish with Us, Host an Amazon Hub,
+    See More Make Money with Us
+  - **Amazon Payment Products:** Amazon Business Card, Shop with Points, Reload Your Balance,
+    Amazon Currency Converter
+  - **Let Us Help You:** Amazon and COVID-19, Your Account, Your Orders, Shipping Rates & Policies,
+    Returns & Replacements, Manage Your Content and Devices, Help
+- The columns sit on `--color-nav`, centred in a 1000px (`62.5rem`) wide area. Headings 16px bold
   white; links 14px `--color-footer-link`. Columns wrap on small screens.
 - A 1px `--color-divider` line, then a centred row: logo (about 76px), and three selectors
   (English, USD - U.S. Dollar, United States) with a 1px `--color-locale-border` border,
@@ -106,7 +185,20 @@ Breakpoints (use `em`): **64em** (1024px, hide language picker and Returns & Ord
 - Background `--color-footer-deep`.
 - Services grid inside the same 1000px area: columns about 120px or wider, 12px text.
   Name in `--color-footer-link`, description in `--color-footer-desc`.
-- Legal links (12px, centred, in a row) and the copyright line below.
+- 21 services (name / description):
+  Amazon Music / Stream millions of songs · Amazon Ads / Reach customers wherever they spend
+  their time · 6pm / Score deals on fashion brands · AbeBooks / Books, art & collectibles ·
+  ACX / Audiobook Publishing Made Easy · Sell on Amazon / Start a Selling Account ·
+  Amazon Business / Everything For Your Business · AmazonGlobal / Ship Orders Internationally ·
+  Home Services / Experienced Pros Happiness Guarantee · Amazon Web Services / Scalable Cloud
+  Computing Services · Audible / Listen to Books & Original Audio Performances · Box Office Mojo /
+  Find Movie Box Office Data · Goodreads / Book reviews & recommendations · IMDb / Movies, TV &
+  Celebrities · IMDbPro / Get Info Entertainment Professionals Need · Kindle Direct Publishing /
+  Indie Digital & Print Publishing Made Easy · Prime Video Direct / Video Distribution Made Easy ·
+  Shopbop / Designer Fashion Brands · Woot! / Deals and Shenanigans · Zappos / Shoes & Clothing ·
+  Ring / Smart Home Security Systems
+- Legal links (12px, centred, in a row): Conditions of Use, Privacy Notice, Your Ads Privacy
+  Choices. Below them, the copyright line: "© 1996-2026, Amazon.com, Inc. or its affiliates".
 
 ## Assets
 

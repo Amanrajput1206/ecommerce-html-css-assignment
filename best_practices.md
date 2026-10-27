@@ -36,7 +36,8 @@ pasting **within** your own two lab files (for example duplicating a card you wr
    wrapper's tag (for example `<div>` to `<nav>` or `<section>`) if a more semantic element fits.
 3. Write all CSS in `style_ecommerce_assignment.css`, under the matching `SECTION N` banner.
    Do not use `<style>` tags or `style=""` attributes.
-4. Keep the banner comments in the CSS file.
+4. Keep the section comments (`/* SECTION 1 - ... */` etc.) in both files. The content each
+   section needs is listed in `design_spec.md`.
 5. **AI tools** may be used only to look up syntax (for example "how does `minmax()` work").
    Pasting the template, a section of it, or the task into an AI tool to generate your answer
    is not allowed. Whatever you learn, **type it yourself**: don't paste the answer in.
